@@ -1,0 +1,6 @@
+ 1 mostafa emary 4.5 2 3 4
+ 2 ahmed mohamed 5.3 6 7 8
+ 3 heba emary 5.5 9 4 12
+ 4 eslam mohamed 5.6 8 12 3
+ 5 ahlam ibraheem 5 3 6
+ 12 mohamed emary 6 4 7 

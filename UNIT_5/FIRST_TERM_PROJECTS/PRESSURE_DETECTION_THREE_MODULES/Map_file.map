@@ -1,0 +1,183 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+A_M_P               0x4               main.o
+MA_P                0x4               main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00020000         xr
+SRAM             0x20000000         0x00005000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x08000000      0x27c
+ *(.vectors*)
+ .vectors       0x08000000       0x1c startup.o
+                0x08000000                vectors
+ *(.text*)
+ .text          0x0800001c       0xbc startup.o
+                0x0800001c                NMI_Handler
+                0x0800001c                LL_Fault_Handler
+                0x0800001c                MM_Fault_Handler
+                0x0800001c                Usage_Fault_Handler
+                0x0800001c                Default_Handler
+                0x0800001c                MM_Bus
+                0x08000028                Reset_Handler
+ .text          0x080000d8       0x20 main.o
+                0x080000d8                main
+ .text          0x080000f8       0x38 main_algorithm.o
+                0x080000f8                ST_DETECTION
+ .text          0x08000130      0x10c driver.o
+                0x08000130                Delay
+                0x08000154                getPressureVal
+                0x0800016c                Set_Alarm_actuator
+                0x080001bc                GPIO_INITIALIZATION
+ .text          0x0800023c       0x40 alarm_monitor.o
+                0x0800023c                call_ALARM
+                0x08000248                ST_ALARM_ON
+                0x0800026c                ST_ALARM_OFF
+ *(.rodata)
+                0x0800027c                _E_text_ = .
+
+.glue_7         0x0800027c        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x0800027c        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x0800027c        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x0800027c        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x0800027c        0x0
+ .iplt          0x00000000        0x0 startup.o
+
+.rel.dyn        0x0800027c        0x0
+ .rel.iplt      0x00000000        0x0 startup.o
+
+.data           0x20000000        0x4 load address 0x0800027c
+                0x20000000                _S_DATA_ = .
+ *(.data)
+ .data          0x20000000        0x0 startup.o
+ .data          0x20000000        0x0 main.o
+ .data          0x20000000        0x4 main_algorithm.o
+                0x20000000                threshold
+ .data          0x20000004        0x0 driver.o
+ .data          0x20000004        0x0 alarm_monitor.o
+                0x20000004                . = ALIGN (0x4)
+                0x20000004                _E_DATA_ = .
+
+.igot.plt       0x20000004        0x0 load address 0x08000280
+ .igot.plt      0x00000000        0x0 startup.o
+
+.bss            0x20000004     0x1010 load address 0x08000280
+                0x20000004                _S_BSS_ = .
+ *(.bss)
+ .bss           0x20000004        0x0 startup.o
+ .bss           0x20000004        0x0 main.o
+ .bss           0x20000004        0x4 main_algorithm.o
+                0x20000004                M_P_VAL
+ .bss           0x20000008        0x0 driver.o
+ .bss           0x20000008        0x4 alarm_monitor.o
+                0x20000008                A_M_P_VAL
+                0x2000000c                . = ALIGN (0x4)
+                0x2000000c                _E_BSS_ = .
+                0x2000100c                . = (. + 0x1000)
+ *fill*         0x2000000c     0x1000 
+                0x2000100c                _stack_top = .
+ COMMON         0x2000100c        0x8 main.o
+                0x2000100c                A_M_P
+                0x20001010                MA_P
+LOAD startup.o
+LOAD main.o
+LOAD main_algorithm.o
+LOAD driver.o
+LOAD alarm_monitor.o
+OUTPUT(FIRST_TRERM_PROJECT_1.elf elf32-littlearm)
+
+.debug_info     0x00000000      0x513
+ .debug_info    0x00000000      0x172 startup.o
+ .debug_info    0x00000172       0xc4 main.o
+ .debug_info    0x00000236       0xf0 main_algorithm.o
+ .debug_info    0x00000326      0x103 driver.o
+ .debug_info    0x00000429       0xea alarm_monitor.o
+
+.debug_abbrev   0x00000000      0x2ad
+ .debug_abbrev  0x00000000       0xc0 startup.o
+ .debug_abbrev  0x000000c0       0x68 main.o
+ .debug_abbrev  0x00000128       0x82 main_algorithm.o
+ .debug_abbrev  0x000001aa       0x9d driver.o
+ .debug_abbrev  0x00000247       0x66 alarm_monitor.o
+
+.debug_loc      0x00000000      0x208
+ .debug_loc     0x00000000       0x64 startup.o
+ .debug_loc     0x00000064       0x2c main.o
+ .debug_loc     0x00000090       0x2c main_algorithm.o
+ .debug_loc     0x000000bc       0xc8 driver.o
+ .debug_loc     0x00000184       0x84 alarm_monitor.o
+
+.debug_aranges  0x00000000       0xa0
+ .debug_aranges
+                0x00000000       0x20 startup.o
+ .debug_aranges
+                0x00000020       0x20 main.o
+ .debug_aranges
+                0x00000040       0x20 main_algorithm.o
+ .debug_aranges
+                0x00000060       0x20 driver.o
+ .debug_aranges
+                0x00000080       0x20 alarm_monitor.o
+
+.debug_line     0x00000000      0x266
+ .debug_line    0x00000000       0xac startup.o
+ .debug_line    0x000000ac       0x70 main.o
+ .debug_line    0x0000011c       0x57 main_algorithm.o
+ .debug_line    0x00000173       0x99 driver.o
+ .debug_line    0x0000020c       0x5a alarm_monitor.o
+
+.debug_str      0x00000000      0x216
+ .debug_str     0x00000000      0x14d startup.o
+                                0x181 (size before relaxing)
+ .debug_str     0x0000014d       0x17 main.o
+                                0x107 (size before relaxing)
+ .debug_str     0x00000164       0x33 main_algorithm.o
+                                0x130 (size before relaxing)
+ .debug_str     0x00000197       0x4c driver.o
+                                0x145 (size before relaxing)
+ .debug_str     0x000001e3       0x33 alarm_monitor.o
+                                0x134 (size before relaxing)
+
+.comment        0x00000000       0x11
+ .comment       0x00000000       0x11 startup.o
+                                 0x12 (size before relaxing)
+ .comment       0x00000000       0x12 main.o
+ .comment       0x00000000       0x12 main_algorithm.o
+ .comment       0x00000000       0x12 driver.o
+ .comment       0x00000000       0x12 alarm_monitor.o
+
+.ARM.attributes
+                0x00000000       0x33
+ .ARM.attributes
+                0x00000000       0x33 startup.o
+ .ARM.attributes
+                0x00000033       0x33 main.o
+ .ARM.attributes
+                0x00000066       0x33 main_algorithm.o
+ .ARM.attributes
+                0x00000099       0x33 driver.o
+ .ARM.attributes
+                0x000000cc       0x33 alarm_monitor.o
+
+.debug_frame    0x00000000      0x180
+ .debug_frame   0x00000000       0x4c startup.o
+ .debug_frame   0x0000004c       0x2c main.o
+ .debug_frame   0x00000078       0x2c main_algorithm.o
+ .debug_frame   0x000000a4       0x78 driver.o
+ .debug_frame   0x0000011c       0x64 alarm_monitor.o
