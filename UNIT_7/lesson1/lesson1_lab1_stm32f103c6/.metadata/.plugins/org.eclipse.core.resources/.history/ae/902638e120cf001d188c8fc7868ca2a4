@@ -1,0 +1,120 @@
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+/* ====================== Definitions ========================= */
+// Clock
+#define RCC                      0x40021000  // Base address of clock register
+#define RCC_APB2ENR              0x18  // offset address of APB2 peripheral clock enable register
+#define RCC_APB2ENR_R            *(volatile uint32_t *)(RCC + RCC_APB2ENR)
+#define RCC_GPIO_PORTA_EN        (1<<2)  // Set bit 2 to enable clock of Port A
+#define RCC_GPIO_PORTB_EN        (1<<3)  // Set bit 3 to enable clock of Port B
+
+/* ====== GPIO Registers ====== */
+#define CRL                      0x00
+#define CRH                      0x04
+#define ODR                      0x0C
+#define IDR                      0x08
+
+/* ===== PORTA + Registers ====== */
+#define PORTA                    0x40010800
+#define GPIO_PORTA_CRH_R         *(volatile uint32_t *)(PORTA + CRH)
+#define GPIO_PORTA_CRL_R         *(volatile uint32_t *)(PORTA + CRL)
+#define GPIO_PORTA_ODR_R         *(volatile uint32_t *)(PORTA + ODR)
+#define GPIO_PORTA_IDR_R         *(volatile uint32_t *)(PORTA + IDR)
+
+/* ===== PORTB + Registers ====== */
+#define PORTB      0x40010C00
+#define GPIO_PORTB_CRH_R         *(volatile uint32_t *)(PORTB + CRH)
+#define GPIO_PORTB_CRL_R         *(volatile uint32_t *)(PORTB + CRL)
+#define GPIO_PORTB_ODR_R         *(volatile uint32_t *)(PORTB + ODR)
+#define GPIO_PORTB_IDR_R         *(volatile uint32_t *)(PORTB + IDR)
+
+/* ========== Prototypes ========= */
+void clock_init();
+void GPIO_Init();
+void delay(unsigned int x);
+
+/* =========== Main Program ========== */
+int main(void)
+{
+	clock_init();
+	GPIO_Init();
+
+	while(1)
+	{
+		// Check PortA pin1 --> connected with external PUR
+		if (((GPIO_PORTA_IDR_R & (1<<1)) >> 1) == 0) // Push button pressed. 0 due to pull up
+		{
+			GPIO_PORTB_ODR_R ^= 1<<1;
+			while(((GPIO_PORTA_IDR_R & (1<<1)) >> 1) == 0);  // single press
+		}
+
+		// Check PortA pin13 --> connected with external PDR
+		if (((GPIO_PORTA_IDR_R & (1<<13)) >> 13) == 1)  // Push button pressed. 1 due to pull down
+		{
+			// Multi Press
+			GPIO_PORTB_ODR_R ^= 1<<13;
+		}
+		delay(1);
+	}
+}
+
+/* ======== clock init definition ======= */
+void clock_init()
+{
+	// Enable clock of Port A
+	RCC_APB2ENR_R |= RCC_GPIO_PORTA_EN;
+
+	// Enable clock of Port B
+	RCC_APB2ENR_R |= RCC_GPIO_PORTB_EN;
+}
+
+/* ======= GPIO init definition ======== */
+void GPIO_Init()
+{
+	GPIO_PORTA_CRL_R = 0x0;
+	GPIO_PORTA_CRH_R = 0x0;
+	GPIO_PORTA_ODR_R = 0x0;
+
+	GPIO_PORTB_CRL_R = 0x0;
+
+	// Port A -> Pin 1 -> input ( High impedance = floating )
+	GPIO_PORTA_CRL_R &= ~(0b11 << 4);
+
+	GPIO_PORTA_CRL_R |= (0b01<<6);  // pg. 171 in the TRM
+
+	// Port B -> pin 1 -> output ( push-pull mode )
+	// CNF : 00 General purpose output push-pull
+	GPIO_PORTB_CRL_R &= ~(0b11 << 6);
+
+	// 01 : Output mode maximum speed 10 MHz
+	GPIO_PORTB_CRL_R |= (0b01 << 4);
+
+	// Port A -> pin 13 -> input ( High impedance = floating )
+
+	// 00 : Input mode
+	GPIO_PORTA_CRH_R &= ~(0b11 << 20);  // pg. 172 in the TRM
+
+	// 01 : Floating point input
+	GPIO_PORTA_CRH_R |= (0b01 << 22);
+
+	// Port B -> pin 13 -> output ( push-pull mode )
+
+	// 01 : Output mode
+	GPIO_PORTB_CRH_R |= (0b01 << 20);
+
+	// 00 : General purpose output push-pull
+	GPIO_PORTB_CRH_R &= ~(0b11 << 22);
+
+}
+
+void delay(unsigned int x)
+{
+	unsigned int i, j;
+	for (i = 0;i < x; i++)
+	{
+		for (j = 0; j < 255; j++);
+	}
+
+}

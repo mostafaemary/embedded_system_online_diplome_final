@@ -1,0 +1,524 @@
+15:10:39 **** Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c:24:1: error: unknown type name 'vouid'; did you mean 'void'?
+   24 | vouid clock_init(void)
+      | ^~~~~
+      | void
+../Src/main.c: In function 'clock_init':
+../Src/main.c:33:1: warning: control reaches end of non-void function [-Wreturn-type]
+   33 | }
+      | ^
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:10:52 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+15:53:03 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+15:53:16 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+16:23:11 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    620	      8	   1568	   2196	    894	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+16:23:52 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    620	      8	   1568	   2196	    894	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+16:27:23 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    632	      8	   1568	   2208	    8a0	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+16:44:35 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:81:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   81 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    632	      8	   1568	   2208	    8a0	lab1.elf
+Finished building: default.size.stdout
+Finished building: lab1.list
+ 
+ 
+16:45:32 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-size   lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    632	      8	   1568	   2208	    8a0	lab1.elf
+Finished building: default.size.stdout
+ 
+16:46:40 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'main':
+../Src/main.c:81:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   81 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    632	      8	   1568	   2208	    8a0	lab1.elf
+Finished building: default.size.stdout
+Finished building: lab1.list
+ 
+ 
+17:04:34 **** Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'main':
+../Src/main.c:81:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   81 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    632	      8	   1568	   2208	    8a0	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+17:13:52 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    892	      8	   1568	   2468	    9a4	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+17:16:40 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:81:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   81 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    632	      8	   1568	   2208	    8a0	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+17:37:45 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwaf-2 -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc: error: unrecognized debug output level 'dwaf-2'
+arm-none-eabi-gcc: error: '-gdwarf2' is ambiguous; use '-gdwarf-2' for DWARF version or '-gdwarf' '-g2' for debug level
+make: *** [Startup/subdir.mk:19: Startup/startup_stm32f103c6tx.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+arm-none-eabi-gcc: error: '-gdwarf2' is ambiguous; use '-gdwarf-2' for DWARF version or '-gdwarf' '-g2' for debug level
+make: *** [Src/subdir.mk:25: Src/syscalls.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:38:28 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwaf-2 -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwaf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwaf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc: error: unrecognized debug output level 'dwaf-2'
+make: *** [Startup/subdir.mk:19: Startup/startup_stm32f103c6tx.o] Error 1
+make: *** Waiting for unfinished jobs....
+arm-none-eabi-gcc: error: unrecognized debug output level 'dwaf-2'
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+arm-none-eabi-gcc: error: unrecognized debug output level 'dwaf-2'
+make: *** [Src/subdir.mk:25: Src/syscalls.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:38:52 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwaf-2 -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc: error: unrecognized debug output level 'dwaf-2'
+make: *** [Startup/subdir.mk:19: Startup/startup_stm32f103c6tx.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'main':
+../Src/main.c:81:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   81 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:39:10 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwaf-2 -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc: error: unrecognized debug output level 'dwaf-2'
+make: *** [Startup/subdir.mk:19: Startup/startup_stm32f103c6tx.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:39:27 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    632	      8	   1568	   2208	    8a0	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+18:42:46 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:85:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   85 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    820	      8	   1568	   2396	    95c	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+18:45:42 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:91:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   91 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    820	      8	   1568	   2396	    95c	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+18:49:32 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:91:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   91 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    820	      8	   1568	   2396	    95c	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:10:18 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:95:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   95 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    820	      8	   1568	   2396	    95c	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:14:57 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:95:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   95 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    820	      8	   1568	   2396	    95c	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:17:22 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    824	      8	   1568	   2400	    960	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:21:40 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:95:28: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   95 |  if((GPIOA_IDR &(1<<13)>>1)==1)//button is pressed
+      |                            ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    820	      8	   1568	   2396	    95c	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:22:52 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:95:34: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   95 |  if(( GPIOA_IDR & (1<<13) >> 1 ) ==1)//button is pressed
+      |                                  ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    820	      8	   1568	   2396	    95c	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:30:20 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:95:34: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   95 |  if(( GPIOA_IDR & (1<<13) >> 1 ) ==1)//button is pressed
+      |                                  ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    808	      8	   1568	   2384	    950	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:31:20 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    892	      8	   1568	   2468	    9a4	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:32:45 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:97:34: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   97 |  if(( GPIOA_IDR & (1<<13) >> 1 ) ==1)//button is pressed
+      |                                  ^~
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    808	      8	   1568	   2384	    950	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:35:24 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    812	      8	   1568	   2388	    954	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:35:59 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    812	      8	   1568	   2388	    954	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:36:07 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    812	      8	   1568	   2388	    954	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:37:18 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    812	      8	   1568	   2388	    954	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
+19:38:16 **** Incremental Build of configuration Debug for project lab1 ****
+make -j4 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Diploma\units\unit7\lesson1\unit7_lesson1_lab1\lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab1.elf
+ 
+arm-none-eabi-size   lab1.elf 
+arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+    876	      8	   1568	   2452	    994	lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab1.list
+ 
