@@ -62,7 +62,7 @@ void gpio_init()
 	GPIOB_CRL &=~(0b11<<4);
 	//CONFIGURE PORTA PIN5 AS OUTPUT PUSH-PULL
 	//CNF1
-	GPIOA_CRL &=~(0b00<<22);
+	GPIOA_CRL &=~(0b11<<22);
 	//MODE1
 	GPIOA_CRL |=(0b01<<20);
 
