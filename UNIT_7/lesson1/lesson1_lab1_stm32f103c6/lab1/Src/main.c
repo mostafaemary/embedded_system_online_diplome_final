@@ -87,10 +87,10 @@ int main(void)
 	while(1)
 	{
 
-	if( ( ( GPIOA_IDR &(1<<1) )>> 1)==0)//button is pressed
+	if( ( ( GPIOA_IDR &(1<<1) )>> 1)==1)//button is pressed
 	{
 		GPIOB_ODR ^=(1<<1);
-		while( ( ( GPIOA_IDR &(1<<1) )>> 1)==0);//button is pressed
+		while( ( ( GPIOA_IDR &(1<<1) )>> 1)==1);//button is pressed
 	}
 
 	// multi pressing
