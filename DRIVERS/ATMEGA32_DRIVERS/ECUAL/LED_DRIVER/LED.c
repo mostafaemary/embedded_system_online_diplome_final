@@ -7,7 +7,7 @@
 #include "LED.h"
 void LED_init(vuint8_t portnumber,vuint8_t pinnumber)
 {
-	DIO_init(portnumber, pinnumber , OUTPUT);	
+	DIO_init(portnumber, pinnumber , OUTPUT);
 }
 void PIN_MODE(vuint8_t portnumber,vuint8_t pinnumber,LED_MODE mode)
 {
